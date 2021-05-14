@@ -1,0 +1,15 @@
+<h2> STUDIES </h2>
+
+<table>
+    <tr>
+        <th> Study </th>
+        <th> Drug </th>
+        <th> Phase </th>
+        <th> Age </th>
+        <th> Symptoms </th>
+    </tr>
+      <% @studies.each do |study| %>
+        <%= render partial: 'study', locals: { study: study } %>
+      <% end %>
+</table>
+<h2> <%=link_to 'ADD STUDY', input_form_path %> </h2>

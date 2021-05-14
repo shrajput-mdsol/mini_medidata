@@ -1,0 +1,12 @@
+<tr>
+  <td> <%= study.name %> </td>
+  <td> <%= study.drug %></td>
+  <td> <%= study.phase %></td>
+  <td> <%= study.age_limit %></td>
+  <td> <%= study.symptoms %></td>
+  <% if study.my_image.attached? %>>
+    <td> <%= image_tag study.my_image.variant(resize_to_limit: [100, 100]) %> </td>
+  <% end %>>
+</tr>
+
+#once try putting haml here

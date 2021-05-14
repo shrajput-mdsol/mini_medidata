@@ -1,0 +1,45 @@
+<%# <h1>Studies#new</h1>
+<p>Find me in app/views/studies/new.html.erb</p> %>
+
+<h2> Create Study </h2>
+<% if @study.errors.full_messages.present? %>
+  <% @study.errors.full_messages.each do |message| %>
+    <ul>
+      <li><%= message %></li>
+    </ul>
+  <% end %>
+<% end %>
+
+<%= form_with(model: @study, local: true) do |f| %>
+  <p>
+    <%= f.label :Name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :Drug %>
+    <%=f.text_field :drug %>
+  </p>
+
+  <p>
+    <%= f.label :Phase %>
+    <%= f.number_field :phase %>
+  </p>
+
+  <p>
+    <%= f.label :Age %>
+    <%= f.number_field :age_limit %>
+  </p>
+
+  <p>
+    <%= f.label :Symptoms %>
+    <%= f.text_field :symptoms %>
+  </p>
+
+  <p>
+    <%= f.label :Image %>
+    <%= f.file_field :my_image %>
+  </p>
+
+<%= f.submit %>
+<% end %>

@@ -4,7 +4,7 @@ describe Study, type: :model do
   # negative scenarios
   context 'when study do not have a name' do
     it 'is invalid & gives appropriate error for name' do
-      study = Study.create(name: '')
+          study = Study.create(name: '')
       error_messages = study.errors.messages
       expect(study.valid?).to eq false
       expect(error_messages[:name].at(0)).to eq "can't be blank"
@@ -55,5 +55,4 @@ describe Study, type: :model do
   end
   # Doubt
   # If a create|save method is called from here, will this data get stored in some db, if yes where?
-  
 end

@@ -18,5 +18,8 @@ module MiniMedidata
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    Rails.application.config.active_job.queue_adapter = :async
+    #config.active_job.queue_adapter = :sidekiq
+    #config.active_job.queue_adapter = :delayed_job
   end
 end
